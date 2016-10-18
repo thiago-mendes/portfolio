@@ -3,19 +3,9 @@
 	$_GET['key'] = (isset($_GET['key']) ? $_GET['key'] : 'index/index');
 	
 	$key = $_GET['key'];
-
-	//echo $key; die();
-
 	$separator = explode('/', $key);
-
 	$controller = $separator[0];
-
-	//echo $controller; die();
-
 	$action = ($separator[1] == null ? 'index' : $separator[1]);
-
-
-	//echo '<br>' . $controller . ' ' . $action;
 
 	require_once('system/controller.php');
 	require_once('system/config.php');
