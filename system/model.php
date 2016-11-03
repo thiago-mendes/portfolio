@@ -12,13 +12,15 @@ class Model {
 			"url"  => "link 00001",
 		);
 
-		foreach ($dados as $kinds => $values) {
+		foreach ($dados as $inds => $values) {
 			$campos[]  = $inds;
 			$valores[] = $values;
 		}
 
-		$campos = implode(', ', $campos);
-		//return $campos;
+		$campos  = implode(", ", $campos);
+		$valores = "'".implode("','", $valores)."'";
+
+		return $valores;
 	}
 	public function read() {
 

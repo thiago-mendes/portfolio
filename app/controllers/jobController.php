@@ -5,10 +5,10 @@ class Job extends Controller {
 
 		$db = new Jobs_Model();
 
-		print_r($db->insert('jobs', array(
-					"nome" => "Crane job 01",
-					"url"  => "link 00001",
-				)));
+		echo $db->insert('jobs', array(
+				"nome" => "Crane job 01",
+				"url"  => "link 00001",
+			));
 
 		//$this->view('jobs/index');
 	}
