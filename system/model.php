@@ -1,6 +1,6 @@
 <?php
 class Model {
-	protected $db;//
+	protected $db;
 
 	public function __construct() {
 		$this->db = new PDO("mysql:host=127.0.0.1;dbname=portfolio", 'root', 'cr@ne');
@@ -27,11 +27,17 @@ class Model {
 
 		return $q->fetchAll();
 	}
-	public function update() {
+	public function update($tabela, array $dados, $where) {
+		foreach ($dados as $ind => $val) {
+			$campos[] = "{$ind} = '{$val}'";
+		}
+
+		$campos = implode(", ", $campos);
+		return $this->db->query("UPDATE `{$tabela}` SET {$campos} WHERE  {$where}");
 
 	}
-	public function delete() {
-
+	public function delete($tabela, $where) {
+		return $this->db->query("DELETE FROM `{$tabela}` WHERE {$where}");
 	}
 }
 ?>
