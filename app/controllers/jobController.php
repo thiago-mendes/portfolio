@@ -1,13 +1,21 @@
 <?php
 
-	class Job extends Controller {
-		public function index() {
-			$this->view('jobs/index');
-		}
+class Job extends Controller {
+	public function index() {
 
-		public function crane() {
-			$this->view('jobs/crane');
-		}
+		$db = new Jobs_Model();
+
+		print_r($db->insert('jobs', array(
+					"nome" => "Crane job 01",
+					"url"  => "link 00001",
+				)));
+
+		//$this->view('jobs/index');
 	}
+
+	public function crane() {
+		$this->view('jobs/crane');
+	}
+}
 
 ?>
