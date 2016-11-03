@@ -7,11 +7,6 @@ class Model {
 	}
 
 	public function insert($tabela, Array $dados) {
-		$array = array(
-			"nome" => "Crane job 01",
-			"url"  => "link 00001",
-		);
-
 		foreach ($dados as $inds => $values) {
 			$campos[]  = $inds;
 			$valores[] = $values;
@@ -20,10 +15,17 @@ class Model {
 		$campos  = implode(", ", $campos);
 		$valores = "'".implode("','", $valores)."'";
 
-		return $valores;
-	}
-	public function read() {
+		return $this->db->query("INSERT INTO `{$tabela}` ({$campos}) VALUES ({$valores})");
 
+	}
+	public function read($tabela, $where = null) {
+		$where = ($where != null?"WHERE {$where}":"");
+
+		$q = $this->db->query("SELECT * FROM `{$tabela}` {$where} ");
+
+		$q->setFetchMode(PDO::FETCH_ASSOC);
+
+		return $q->fetchAll();
 	}
 	public function update() {
 
