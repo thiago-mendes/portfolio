@@ -29,15 +29,16 @@ class Job extends Controller {
 		print_r($this->model->delete('jobs', 'id='.$id));
 	}
 
-	public function atualizarJob($dados) {
-		/*$url = explode("/", $_GET[key]);
-	$id = $url[2];
+	/*
+public function atualizarJob($dados) {
+$url = explode("/", $_GET[key]);
+$id  = $url[2];
 
-	$this->model->update('jobs', array(
-	"nome" => "NOVO NOME mais e mais",
-	"url"  => "www.teste.com",
-	), 'id=1');***/
-	}
+$this->model->update('jobs', array(
+"nome" => "NOVO NOME mais e mais",
+"url"  => "www.teste.com",
+), 'id=1');
+} */
 }
 
 ?>
