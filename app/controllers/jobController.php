@@ -37,7 +37,7 @@ class Job extends Controller {
 		$this->model->update('jobs', array(
 		"nome" => "NOVO NOME mais e mais",
 		"url"  => "www.teste.com",
-		), 'id=1');*/
+		), 'id=1');***/
 	}
 }
 
