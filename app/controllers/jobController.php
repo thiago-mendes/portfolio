@@ -16,7 +16,7 @@ class Job extends Controller {
 		print_r($this->model->read('jobs'));
 	}
 
-	public function adicionarJob() {
+	public function adicionarJob($dados) {
 		$this->model->insert('jobs', array(
 			"nome" => "Crane job 01",
 			"url"  => "link 00001",
@@ -30,7 +30,7 @@ class Job extends Controller {
 		print_r($this->model->delete('jobs', 'id='.$id));
 	}
 
-	public function atualizarJob() {
+	public function atualizarJob($dados) {
 		/*$url = explode("/", $_GET[key]);
 		$id = $url[2];
 
