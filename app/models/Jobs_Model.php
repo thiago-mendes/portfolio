@@ -1,5 +1,5 @@
-<?php 
-	class Jobs_Model extends Model {
-		
-	}
+<?php
+class Jobs_Model extends Model {
+	public $_tabela = "jobs";
+}
 ?>
