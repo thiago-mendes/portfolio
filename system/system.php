@@ -33,9 +33,10 @@ class System {
 		$this->_action = $ac;
 	}
 
-	 private function setParams() {
+	private function setParams() {
         unset($this->_explode[0]);
         unset($this->_explode[1]);
+
         
         if (end($this->_explode) == null )
             array_pop($this->_explode);
@@ -70,6 +71,8 @@ class System {
 	    else {
 	        return $this->_params;
 	    }
+
+	    return $this->_params[$name];
     }
 
 
@@ -77,7 +80,7 @@ class System {
 		$controller_path = CONTROLLERS.$this->_controller.'Controller.php';
 
 		if (!file_exists($controller_path)) {
-			die("Ops!!!  Essa controller não existe!");
+			die("Ops!!!  A controller " . $controller_path .  " não existe!");
 		}
 
 		require_once ($controller_path);
@@ -86,7 +89,7 @@ class System {
 	
 
 		if (method_exists($app, $_action)) {
-			die('Ops!!! Essa action não existe!');
+			die('Ops!!! A ' . $_action . ' não existe!');
 		}
 
 				
