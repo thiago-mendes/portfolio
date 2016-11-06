@@ -7,8 +7,10 @@ class Job extends Controller {
 		$this->model = new Jobs_Model();
 	}
 
-	public function index() {
-		$this->view('jobs/index');
+	public function index_action() {
+		//echo "JOB aqui";
+		echo $this->getParam('sexo');
+		//$this->view('jobs/index');
 	}
 
 	public function listarJobs() {
