@@ -29,7 +29,7 @@ class System {
 	}
 
 	private function setAction() {
-		$ac            = (!isset($this->_explode[1]) || $this->_explode[1] == NULL || $this->_explode[1] == 'index_action'?'index_action':$this->_explode[1]);
+		$ac            = (!isset($this->_explode[1]) || $this->_explode[1] == NULL || $this->_explode[1] == 'index'?'index_action':$this->_explode[1]);
 		$this->_action = $ac;
 	}
 
@@ -83,7 +83,7 @@ class System {
 		$app = new $this->_controller();
 
 		if (!method_exists($app, $this->_action)) {
-			die('Houve um erro. A Action'.$this->$_action.' não existe.');
+			die('Houve um erro. A Action'.$this->_action.' não existe.');
 		}
 
 		$action = $this->_action;

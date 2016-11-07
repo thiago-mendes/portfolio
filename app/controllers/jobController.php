@@ -7,17 +7,16 @@ class Job extends Controller {
 	}
 
 	public function index_action() {
-		$listaJobs          = $this->jobs->listarJobs();
-		$dados['listaJobs'] = $listaJobs;
+		$listaJobs = $this->jobs->listarJobs();
+		$dados     = array(
+			"listaJobs" => $listaJobs,
+		);
+
 		$this->view('jobs/Index', $dados);
 	}
 
-	public function listarjobs() {
-		echo "LISTAR JOBS";
-	}
-
-	public function teste() {
-		echo "teste 0506";
+	public function remove($idJob) {
+		var_dump($this->getParam('teste'));
 	}
 }
 

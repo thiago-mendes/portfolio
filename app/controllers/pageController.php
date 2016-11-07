@@ -10,6 +10,10 @@ class Page extends Controller {
 
 		$this->view('pages/Home', $dados);
 	}
+
+	public function remove($idJob) {
+		echo $this->getParam('teste');
+	}
 }
 
 ?>
