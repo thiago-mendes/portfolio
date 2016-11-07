@@ -1,8 +1,15 @@
 <?php
-
 class Job extends Controller {
+	private $jobs;
+
+	public function __construct() {
+		$this->jobs = NEW Jobs_Model();
+	}
+
 	public function index_action() {
-		echo "INDEX  testando";
+		$listaJobs          = $this->jobs->listarJobs();
+		$dados['listaJobs'] = $listaJobs;
+		$this->view('jobs/Index', $dados);
 	}
 
 	public function listarjobs() {

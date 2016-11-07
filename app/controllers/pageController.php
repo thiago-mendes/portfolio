@@ -2,16 +2,13 @@
 
 class Page extends Controller {
 	public function index_action() {
+		//echo "INDEX";
 		$dados = $this->getParam();
+		$email = new EmailHelper();
+
+		//$email->enviaEmail();
 
 		$this->view('pages/Home', $dados);
-	}
-
-	public function teste() {
-		echo " 0000000 1";
-		die;
-
-		//$this->view('pages/Home', $dados);
 	}
 }
 

@@ -17,10 +17,13 @@ class Model {
 
 		return $this->db->query("INSERT INTO `{$this->_tabela}` ({$campos}) VALUES ({$valores})");// Insere os dados no banco de dados
 	}
-	public function read($where = null) {
-		$where = ($where != null?"WHERE {$where}":"");// Varifica se foi passado um where
+	public function read($where = null, $limit = null, $offset = null, $orderby = null) {
+		$where   = ($where != null?"WHERE {$where}":"");// Varifica se foi passado um where
+		$limit   = ($limit != null?"LIMIT {$limit}":"");// Varifica se foi passado um where
+		$offset  = ($offset != null?"OFFSET {$offset}":"");// Varifica se foi passado um where
+		$orderby = ($orderby != null?"ORDER BY {$orderby}":"");// Varifica se foi passado um where
 
-		$q = $this->db->query("SELECT * FROM `{$this->_tabela}` {$where} ");//Busca os dados da tabela, faz o filtro caso tenha where
+		$q = $this->db->query("SELECT * FROM `{$this->_tabela}` {$where} {$orderby}  {$limit} {$offset}");//Busca os dados da tabela, faz o filtro caso tenha where
 
 		$q->setFetchMode(PDO::FETCH_ASSOC);// Configuro o Fetch, influencia na exibição dos dados
 
