@@ -1,5 +1,9 @@
 <?php
 class Jobs_Model extends Model {
-	public $_tabela = "jobs";
+	public $model = "jobs";
+
+	public function listarJobs() {
+		$this->model->read('jobs');
+	}
 }
 ?>

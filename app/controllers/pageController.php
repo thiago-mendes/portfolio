@@ -2,11 +2,16 @@
 
 class Page extends Controller {
 	public function index_action() {
-		//echo "INDEX";
-		$dados['nome']  = $this->getParam('nome');
-		$dados['idade'] = $this->getParam('idade');
+		$dados = $this->getParam();
 
 		$this->view('pages/Home', $dados);
+	}
+
+	public function teste() {
+		echo " 0000000 1";
+		die;
+
+		//$this->view('pages/Home', $dados);
 	}
 }
 
