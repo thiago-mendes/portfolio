@@ -5,7 +5,6 @@ class controller extends System {
 			extract($vars, EXTR_PREFIX_ALL, 'd');
 		}
 		return require_once (VIEWS.$nome.'.php');
-		exit();
 	}
 }
 ?>

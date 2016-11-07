@@ -12,7 +12,7 @@ class Page extends Controller {
 	}
 
 	public function remove($idJob) {
-		echo $this->getParam('teste');
+		echo $this->getParam('id');
 	}
 }
 

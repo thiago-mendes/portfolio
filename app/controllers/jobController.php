@@ -15,8 +15,8 @@ class Job extends Controller {
 		$this->view('jobs/Index', $dados);
 	}
 
-	public function remove($idJob) {
-		var_dump($this->getParam('teste'));
+	public function remove() {
+		var_dump($this->getParam('id'));
 	}
 }
 
