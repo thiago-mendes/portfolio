@@ -4,7 +4,8 @@ class Model {
 	public $_tabela;
 
 	public function __construct() {
-		$this->db = new PDO("mysql:host=127.0.0.1;dbname=new-portfolio", 'root', 'mendes15');
+		//$this->db = new PDO("mysql:host=127.0.0.1;dbname=new-portfolio", 'root', 'mendes15');
+		$this->db = new PDO("mysql:host=127.0.0.1;dbname=portfolio", 'root', 'cr@ne');
 		// Conecta no banco de DADOS
 	}
 

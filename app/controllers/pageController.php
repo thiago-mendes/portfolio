@@ -3,12 +3,10 @@
 class Page extends Controller {
 	public function index_action() {
 		//echo "INDEX";
-		echo $this->getParam('nome');
+		$dados['nome']  = $this->getParam('nome');
+		$dados['idade'] = $this->getParam('idade');
 
-	}
-
-	public function teste() {
-		echo "TESTE";
+		$this->view('pages/Home', $dados);
 	}
 }
 
