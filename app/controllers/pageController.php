@@ -8,7 +8,7 @@ class Page extends Controller {
 
 		//$email->enviaEmail();
 
-		$this->view('pages/Home', $dados);
+		$this->view('pages/home', $dados);
 	}
 
 	public function remove($idJob) {

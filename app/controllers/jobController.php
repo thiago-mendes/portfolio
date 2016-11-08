@@ -1,22 +1,25 @@
 <?php
 class Job extends Controller {
-	private $jobs;
-
-	public function __construct() {
-		$this->jobs = NEW Jobs_Model();
-	}
 
 	public function index_action() {
-		$listaJobs = $this->jobs->listarJobs();
+		$jobs = new Jobs_Model();
+
+		$listaJobs = $jobs->listarJobs();
 		$dados     = array(
 			"listaJobs" => $listaJobs,
 		);
 
-		$this->view('jobs/Index', $dados);
+		$this->view('jobs/index', $dados);
 	}
 
 	public function remove() {
-		var_dump($this->getParam('id'));
+
+		$jobs     = new Jobs_Model();
+		$idDelete = $this->getParam('id');
+
+		echo $idDelete;
+
+		$jobs->removeJob($idDelete);
 	}
 }
 
