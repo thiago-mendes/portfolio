@@ -5,5 +5,9 @@ class Jobs_Model extends Model {
 	public function listarJobs($qtd = null, $offset = null) {
 		return $this->read(null, $qtd, $offset, 'id ASC');
 	}
+
+	public function removeJob($idDeleta) {
+		echo $this->delete('id = '. $idDeleta);
+	}
 }
 ?>
