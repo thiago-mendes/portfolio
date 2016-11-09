@@ -79,7 +79,7 @@ class System {
 			die('Houve um erro. O Controller '.$controller_path.' nao existe.');
 		}
 
-		require_once ($controller_path);
+		require ($controller_path);
 		$app = new $this->_controller();
 
 		if (!method_exists($app, $this->_action)) {

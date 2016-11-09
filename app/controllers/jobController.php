@@ -17,9 +17,6 @@ class Job extends Controller {
 
 		$novoJob = $this->getParam();
 		$jobs->adicionarJob($novoJob);
-
-		echo "teste <br>";
-
 		print_r($novoJob);
 
 	}
@@ -27,9 +24,6 @@ class Job extends Controller {
 	public function remove() {
 		$jobs     = new Jobs_Model();
 		$idDelete = $this->getParam('id');
-
-		echo $idDelete;
-
 		$jobs->removeJob($idDelete);
 	}
 }
