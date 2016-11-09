@@ -6,8 +6,12 @@ class Jobs_Model extends Model {
 		return $this->read(null, $qtd, $offset, 'id ASC');
 	}
 
+	public function adicionarJob($dados) {
+		return $this->insert($dados);
+	}
+
 	public function removeJob($idDeleta) {
-		echo $this->delete('id = '. $idDeleta);
+		echo $this->delete('id = '.$idDeleta);
 	}
 }
 ?>

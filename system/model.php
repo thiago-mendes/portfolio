@@ -12,8 +12,8 @@ class Model {
 	//INICIO DO CRUD -> CREATE | READ | UPDATE | DELET
 
 	public function insert(Array $dados) {
-		$campos  = implode(", ", array_keys($campos));// Cria um array com os indices
-		$valores = "'".implode("','", array_values($valores))."'";// Cria um arrey com os valores
+		$campos  = implode(", ", array_keys($dados));// Cria um array com os indices
+		$valores = "'".implode("','", array_values($dados))."'";// Cria um arrey com os valores
 
 		return $this->db->query("INSERT INTO `{$this->_tabela}` ({$campos}) VALUES ({$valores})");// Insere os dados no banco de dados
 	}

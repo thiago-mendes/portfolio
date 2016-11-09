@@ -12,8 +12,19 @@ class Job extends Controller {
 		$this->view('jobs/index', $dados);
 	}
 
-	public function remove() {
+	public function adicionar() {
+		$jobs = new Jobs_Model();
 
+		$novoJob = $this->getParam();
+		$jobs->adicionarJob($novoJob);
+
+		echo "teste <br>";
+
+		print_r($novoJob);
+
+	}
+
+	public function remove() {
 		$jobs     = new Jobs_Model();
 		$idDelete = $this->getParam('id');
 
